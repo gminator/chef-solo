@@ -1,0 +1,18 @@
+{
+
+  "config" : {
+
+  },
+  "mysql" : {
+        "user" : "root",
+        "root_password" : "dvnstw",
+	"database" : "development"
+  },
+  "run_list": [ 
+		"recipe[apt]",
+		"recipe[environment]",
+		"recipe[source-code]",
+		"recipe[phpunit]"
+	
+	]
+}
