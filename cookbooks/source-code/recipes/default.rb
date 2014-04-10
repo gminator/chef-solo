@@ -12,7 +12,7 @@ bash "Checkout Code" do
         cwd "/home/application/public_html/"
         user "application"
         code <<-EOF
-          git clone https://github.com/gminator/gitflowdemo.git .
+          git clone git@github.com:gminator/gitflowdemo.git .
 	  git flow init -fd
         EOF
 end
@@ -28,6 +28,7 @@ template "/home/application/public_html/config.php" do
         variables({
                 :mysql_username => "#{node['mysql']['user']}",
 		:mysql_passaword => "#{node['mysql']['root_password']}",
+		 :mysql_db => "#{node['mysql']['database']}"
 		
         })
 end
