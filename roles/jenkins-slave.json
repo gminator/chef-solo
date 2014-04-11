@@ -1,0 +1,7 @@
+{
+
+	"jenkins" : "41.74.186.33",
+  "run_list": [  
+		"recipe[jenkins-client]"
+	]
+}

@@ -1,5 +1,6 @@
 {
 
+ "jenkins" : "41.74.186.33",
   "php" : {
 	"error" : "On"
   },
@@ -13,6 +14,7 @@
 		"recipe[environment]",
 		"recipe[source-code]",
 		"recipe[phpunit]",
-		"recipe[staging]"	
+		"recipe[staging]",
+		 "recipe[jenkins-client]"
 	]
 }
