@@ -28,7 +28,7 @@ end
 bash "Start Jenkins Slave Node" do
 	  code <<-EOH
 		killall java
-		su -l application -c 'cd ~/ && java -jar slave.jar -jnlpUrl http://#{node['jenkins']}:8080/computer/Staging%20Node%201/slave-agent.jnlp > /dev/null 2>&1 &'
+		su -l application -c 'cd ~/ && java -jar slave.jar -jnlpUrl http://#{node['jenkins']}:8080/computer/#{node['node_name']}/slave-agent.jnlp > /dev/null 2>&1 &'
 	EOH
 end
 
