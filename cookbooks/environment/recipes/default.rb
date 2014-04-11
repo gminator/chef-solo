@@ -39,6 +39,14 @@ cookbook_file "/home/application/.ssh/id_rsa" do
   group "application"
 end
 
+cookbook_file "/etc/ssh/ssh_config" do
+  source "ssh_config"
+  mode "0775"
+  owner "root"
+  group "root"
+end
+
+
 
 cookbook_file "/etc/apache2/sites-enabled/000-default" do
 	source "000-default"
