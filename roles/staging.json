@@ -6,13 +6,13 @@
   "mysql" : {
         "user" : "root",
         "root_password" : "dvnstw",
-	"database" : "development"
+	"database" : "staging"
   },
   "run_list": [ 
 		"recipe[apt]",
 		"recipe[environment]",
 		"recipe[source-code]",
-		"recipe[phpunit]"
-	
+		"recipe[phpunit]",
+		"recipe[staging]"	
 	]
 }

@@ -76,3 +76,29 @@ bash "Create Data Base" do
 end
 
 
+
+template "/etc/php5/apache2/php.ini" do
+        source "php.ini"
+        owner "root"
+        group "root"
+        mode 0755
+	variables({
+                :error_reporting => "#{node['php']['error']}"
+        })
+
+	notifies :restart, resources(:service => "apache2"), :immediately
+end
+
+template "/etc/php5/cli/php.ini" do
+        source "php.ini"
+        owner "root"
+        group "root"
+        mode 0755
+	variables({
+                :error_reporting => "On"
+        })
+        notifies :restart, resources(:service => "apache2"), :immediately
+end
+
+
+
