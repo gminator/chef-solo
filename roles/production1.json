@@ -1,0 +1,21 @@
+{
+
+ "jenkins" : "41.74.186.33",
+  "node_name" : "production1",
+  "php" : {
+	"error" : "On"
+  },
+  "mysql" : {
+        "user" : "root",
+        "root_password" : "dvnstw",
+	"database" : "staging"
+  },
+  "run_list": [ 
+		"recipe[apt]",
+		"recipe[environment]",
+		"recipe[phpunit]",
+	        "recipe[source-code]",
+		"recipe[staging]",
+		 "recipe[jenkins-client]"
+	]
+}
