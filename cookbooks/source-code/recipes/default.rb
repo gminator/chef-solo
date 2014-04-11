@@ -20,15 +20,8 @@ end
 
 
 
-template "/home/application/public_html/config.php" do
-        source "config.php"
-        owner "application"
-        group "application"
-        mode 0755
-        variables({
-                :mysql_username => "#{node['mysql']['user']}",
-		:mysql_passaword => "#{node['mysql']['root_password']}",
-		 :mysql_db => "#{node['mysql']['database']}"
-		
-        })
+link "/home/application/public_html/config.php" do
+  to "/home/application/config.php"
 end
+
+
