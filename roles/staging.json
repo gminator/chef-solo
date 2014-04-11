@@ -12,7 +12,6 @@
   "run_list": [ 
 		"recipe[apt]",
 		"recipe[environment]",
-		"recipe[source-code]",
 		"recipe[phpunit]",
 		"recipe[staging]",
 		 "recipe[jenkins-client]"
